@@ -1,0 +1,9 @@
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\bin\Debug\MultiComputerConnection.exe
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\bin\Debug\MultiComputerConnection.pdb
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\bin\Debug\MultiComputerConnection.xml
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Form1.resources
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Resources.resources
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbproj.GenerateResource.Cache
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.exe
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.xml
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.pdb
