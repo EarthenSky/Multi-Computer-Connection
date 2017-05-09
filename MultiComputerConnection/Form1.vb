@@ -25,21 +25,44 @@ Public Class Form1
 
     'Get info from other computers here.
     Private Sub tmrListenerUpdate_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrListenerUpdate.Tick
-        If listener.Pending = True Then  'If a Computer wants to send something.
-            client = listener.AcceptTcpClient() 'Accepts the "message."
+        Try
+            If listener.Pending = True Then  'If a Computer wants to send something.
+                client = listener.AcceptTcpClient() 'Accepts the "message."
 
-            Dim shtInfo As String = ""
+                Dim shtInfo As String = ""
 
-            Dim Reader As New StreamReader(client.GetStream())  'Start getting the other com info.
-            While Reader.Peek > -1  'Changes each character sent into a string and adds it to the 
-                shtInfo = shtInfo + Convert.ToChar(Reader.Read()).ToString
-            End While
+                Dim Reader As New StreamReader(client.GetStream())  'Start getting the other com info.
+                While Reader.Peek > -1  'Changes each character sent into a string and adds it to the 
+                    shtInfo += Convert.ToChar(Reader.Read()).ToString
+                End While
 
-            lbxChatConsole.Items.Add(shtInfo)
-        End If
+                lbxChatConsole.Items.Add(shtInfo.ToString())
+            End If
+        Catch ex As Exception
+            Console.WriteLine(ex)
+            Dim Errorresult As String = ex.Message
+            MessageBox.Show(Errorresult & vbCrLf & vbCrLf & "???", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConnect.Click
         client = New TcpClient(tbxConnectionComputerName.Text, 5019)
+    End Sub
+
+    Private Sub btnUpdateChatConsole_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdateChatConsole.Click
+        Try
+            client = New TcpClient(tbxConnectionComputerName.Text, 5019)
+
+            'Sends the message.
+            Dim Writer As New StreamWriter(client.GetStream())
+            Writer.Write(tbxMessageToSend.Text)
+            Writer.Flush()
+
+            tbxMessageToSend.Text = "Sent!"
+        Catch ex As Exception
+            Console.WriteLine(ex)
+            Dim Errorresult As String = ex.Message
+            MessageBox.Show(Errorresult & vbCrLf & vbCrLf & "Please Review Client Address", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
