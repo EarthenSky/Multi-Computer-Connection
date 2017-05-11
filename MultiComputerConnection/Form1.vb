@@ -15,7 +15,7 @@ Public Class Form1
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ListenerThread As New Thread(New ThreadStart(AddressOf Listening))
-        Me.Text += My.Computer.Name
+        Me.Text += " " & My.Computer.Name
         ListenerThread.Start()
     End Sub
 
@@ -41,7 +41,7 @@ Public Class Form1
         Catch ex As Exception
             Console.WriteLine(ex)
             Dim Errorresult As String = ex.Message
-            MessageBox.Show(Errorresult & vbCrLf & vbCrLf & "???", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(Errorresult & vbCrLf & vbCrLf & "???", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

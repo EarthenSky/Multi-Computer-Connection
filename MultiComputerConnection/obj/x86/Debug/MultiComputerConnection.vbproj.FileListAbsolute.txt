@@ -7,3 +7,13 @@ M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\ob
 M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.exe
 M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.xml
 M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.pdb
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.exe
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.xml
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.pdb
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\bin\Debug\MultiComputerConnection.exe
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\bin\Debug\MultiComputerConnection.pdb
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\bin\Debug\MultiComputerConnection.xml
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbprojResolveAssemblyReference.cache
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Form1.resources
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Resources.resources
+C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbproj.GenerateResource.Cache
