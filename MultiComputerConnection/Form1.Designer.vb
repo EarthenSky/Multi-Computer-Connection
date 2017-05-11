@@ -37,9 +37,9 @@ Partial Class Form1
         'lbxChatConsole
         '
         Me.lbxChatConsole.FormattingEnabled = True
-        Me.lbxChatConsole.Location = New System.Drawing.Point(13, 13)
+        Me.lbxChatConsole.Location = New System.Drawing.Point(12, 12)
         Me.lbxChatConsole.Name = "lbxChatConsole"
-        Me.lbxChatConsole.Size = New System.Drawing.Size(120, 277)
+        Me.lbxChatConsole.Size = New System.Drawing.Size(468, 277)
         Me.lbxChatConsole.TabIndex = 0
         '
         'btnUpdateChatConsole
@@ -47,7 +47,7 @@ Partial Class Form1
         Me.btnUpdateChatConsole.BackColor = System.Drawing.Color.Bisque
         Me.btnUpdateChatConsole.FlatAppearance.BorderSize = 2
         Me.btnUpdateChatConsole.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnUpdateChatConsole.Location = New System.Drawing.Point(139, 13)
+        Me.btnUpdateChatConsole.Location = New System.Drawing.Point(486, 13)
         Me.btnUpdateChatConsole.Name = "btnUpdateChatConsole"
         Me.btnUpdateChatConsole.Size = New System.Drawing.Size(176, 40)
         Me.btnUpdateChatConsole.TabIndex = 1
@@ -56,7 +56,7 @@ Partial Class Form1
         '
         'tbxMessageToSend
         '
-        Me.tbxMessageToSend.Location = New System.Drawing.Point(139, 59)
+        Me.tbxMessageToSend.Location = New System.Drawing.Point(486, 59)
         Me.tbxMessageToSend.Multiline = True
         Me.tbxMessageToSend.Name = "tbxMessageToSend"
         Me.tbxMessageToSend.Size = New System.Drawing.Size(176, 32)
@@ -64,7 +64,7 @@ Partial Class Form1
         '
         'tbxConnectionComputerName
         '
-        Me.tbxConnectionComputerName.Location = New System.Drawing.Point(139, 224)
+        Me.tbxConnectionComputerName.Location = New System.Drawing.Point(486, 224)
         Me.tbxConnectionComputerName.Name = "tbxConnectionComputerName"
         Me.tbxConnectionComputerName.Size = New System.Drawing.Size(176, 20)
         Me.tbxConnectionComputerName.TabIndex = 3
@@ -73,7 +73,7 @@ Partial Class Form1
         'lblInfo
         '
         Me.lblInfo.AutoSize = True
-        Me.lblInfo.Location = New System.Drawing.Point(136, 208)
+        Me.lblInfo.Location = New System.Drawing.Point(483, 208)
         Me.lblInfo.Name = "lblInfo"
         Me.lblInfo.Size = New System.Drawing.Size(179, 13)
         Me.lblInfo.TabIndex = 4
@@ -82,7 +82,7 @@ Partial Class Form1
         'lbxComputersConnectedTo
         '
         Me.lbxComputersConnectedTo.FormattingEnabled = True
-        Me.lbxComputersConnectedTo.Location = New System.Drawing.Point(139, 110)
+        Me.lbxComputersConnectedTo.Location = New System.Drawing.Point(486, 110)
         Me.lbxComputersConnectedTo.Name = "lbxComputersConnectedTo"
         Me.lbxComputersConnectedTo.Size = New System.Drawing.Size(176, 95)
         Me.lbxComputersConnectedTo.TabIndex = 5
@@ -90,7 +90,7 @@ Partial Class Form1
         'lblInfo2
         '
         Me.lblInfo2.AutoSize = True
-        Me.lblInfo2.Location = New System.Drawing.Point(136, 94)
+        Me.lblInfo2.Location = New System.Drawing.Point(483, 94)
         Me.lblInfo2.Name = "lblInfo2"
         Me.lblInfo2.Size = New System.Drawing.Size(159, 13)
         Me.lblInfo2.TabIndex = 6
@@ -104,7 +104,7 @@ Partial Class Form1
         '
         Me.btnConnect.BackColor = System.Drawing.Color.Bisque
         Me.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnConnect.Location = New System.Drawing.Point(139, 250)
+        Me.btnConnect.Location = New System.Drawing.Point(486, 250)
         Me.btnConnect.Name = "btnConnect"
         Me.btnConnect.Size = New System.Drawing.Size(176, 40)
         Me.btnConnect.TabIndex = 7
@@ -116,7 +116,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Linen
-        Me.ClientSize = New System.Drawing.Size(328, 303)
+        Me.ClientSize = New System.Drawing.Size(674, 303)
         Me.Controls.Add(Me.btnConnect)
         Me.Controls.Add(Me.lblInfo2)
         Me.Controls.Add(Me.lbxComputersConnectedTo)
