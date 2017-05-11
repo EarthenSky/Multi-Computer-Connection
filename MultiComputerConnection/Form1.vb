@@ -17,9 +17,9 @@ Public Class Form1
     'Connect 3 computers together
     'Can connect multiple computers (3) together and can ping name to console.
 
-    Public Const chrStartProcessingText As Char = Chr(7)
-    Public Const chrAddComToConnectListEnd As Char = Chr(6)
-    Public Const chrMessageEnd As Char = Chr(5)
+    Public Const chrStartProcessingText As Char = Chr(0)
+    Public Const chrAddComToConnectListEnd As Char = Chr(1)
+    Public Const chrMessageEnd As Char = Chr(2)
 
     Private listener As New TcpListener(5019)
     Private client As New TcpClient
@@ -65,10 +65,13 @@ Public Class Form1
             'Set Process if needed
             If chrCurrent = chrStartProcessingText Then
                 currentProcess = Process.StringStart
+                Continue While
             ElseIf chrCurrent = chrAddComToConnectListEnd Then
                 currentProcess = Process.AddComEnd
+                Continue While
             ElseIf chrCurrent = chrMessageEnd Then
                 currentProcess = Process.MessageEnd
+                Continue While
             End If
 
 
@@ -95,8 +98,8 @@ Public Class Form1
         Try
             ConnectToComputersAndSendMessages()
 
-            lbxChatConsole.Items.Add(chrStartProcessingText & tbxMessageToSend.Text & chrMessageEnd)
-            lbxChatConsole.Items.Add(chrStartProcessingText & My.Computer.Name & chrMessageEnd)
+            lbxChatConsole.Items.Add(tbxMessageToSend.Text)
+            lbxChatConsole.Items.Add(My.Computer.Name)
 
             tbxMessageToSend.Text = "Sent!"
         Catch ex As Exception
