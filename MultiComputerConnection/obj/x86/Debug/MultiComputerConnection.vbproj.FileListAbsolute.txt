@@ -17,3 +17,4 @@ C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\
 C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Form1.resources
 C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Resources.resources
 C:\Users\gabeg\Documents\GitHub\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbproj.GenerateResource.Cache
+M:\Programming 11\RandomStuff\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbprojResolveAssemblyReference.cache

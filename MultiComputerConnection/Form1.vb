@@ -45,10 +45,6 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub btnConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConnect.Click
-        client = New TcpClient(tbxConnectionComputerName.Text, 5019)
-    End Sub
-
     Private Sub btnUpdateChatConsole_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdateChatConsole.Click
         Try
             client = New TcpClient(tbxConnectionComputerName.Text, 5019)
@@ -57,6 +53,8 @@ Public Class Form1
             Dim Writer As New StreamWriter(client.GetStream())
             Writer.Write(tbxMessageToSend.Text)
             Writer.Flush()
+
+            lbxChatConsole.Items.Add(tbxMessageToSend.Text)
 
             tbxMessageToSend.Text = "Sent!"
         Catch ex As Exception
