@@ -98,6 +98,7 @@ Public Class Form1
                     Dim Writer As New StreamWriter(client.GetStream())
 
                     For index As Short = 0 To lstComputers.Count - 1
+<<<<<<< HEAD
                         Writer.Write(chrStartProcessingText & lstComputers(index).ToString() & chrAddComToConnectListEnd)
                         Writer.Flush()
                     Next
@@ -108,11 +109,18 @@ Public Class Form1
                         Writer = New StreamWriter(client.GetStream())
 
                         Writer.Write(chrStartProcessingText & shtInfo.ToString() & chrAddComToConnectListEnd)
+=======
+                        Writer.Write(chrStartProcessingText & lstComputers(index).ToString() & chrStartProcessingText)
+>>>>>>> origin/master
                         Writer.Flush()
                     Next
 
                 End If
+<<<<<<< HEAD
 
+=======
+                'then adds
+>>>>>>> origin/master
                 lstComputers.Add(shtInfo)
                 lbxComputersConnectedTo.Items.Add(shtInfo)
                 shtInfo = String.Empty
