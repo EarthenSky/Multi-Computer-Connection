@@ -8,6 +8,7 @@ Public Enum Process
     None
     StringStart
     AddComEnd
+    GiveComs
     MessageEnd
 End Enum
 
@@ -19,7 +20,9 @@ Public Class Form1
 
     Public Const chrStartProcessingText As Char = Chr(0)
     Public Const chrAddComToConnectListEnd As Char = Chr(1)
-    Public Const chrMessageEnd As Char = Chr(2)
+    Public Const chrGiveComs As Char = Chr(2)
+    Public Const chrMessageEnd As Char = Chr(3)
+
 
     Private listener As New TcpListener(5019)
     Private client As New TcpClient
@@ -62,24 +65,56 @@ Public Class Form1
         While Reader.Peek > -1  'Changes each character sent into a string and adds it to the 
             Dim chrCurrent As Char = Convert.ToChar(Reader.Read())
 
-            'Set Process if needed
+            'Set process if needed
             If chrCurrent = chrStartProcessingText Then
                 currentProcess = Process.StringStart
                 Continue While
+
             ElseIf chrCurrent = chrAddComToConnectListEnd Then
                 currentProcess = Process.AddComEnd
-                Continue While
+
+            ElseIf chrCurrent = chrGiveComs Then
+                currentProcess = Process.GiveComs
+
             ElseIf chrCurrent = chrMessageEnd Then
                 currentProcess = Process.MessageEnd
-                Continue While
+
             End If
 
-
-            If currentProcess = Process.StringStart Then 'Adds chars to be Proccessed
+            If currentProcess = Process.StringStart Then 'Adds chars to be proccessed
                 shtInfo += chrCurrent
 
             ElseIf currentProcess = Process.AddComEnd Then
+                If lstComputers.Contains(shtInfo) = False Then
+                    lstComputers.Add(shtInfo)
+                    lbxComputersConnectedTo.Items.Add(shtInfo)
+
+                End If
+                shtInfo = String.Empty
+
+            ElseIf currentProcess = Process.GiveComs Then 'Other computer tells it's name, this computer gives any other names to that com.
+                If lstComputers.Count <> 0 Then 'If lstComputers has items in it, send them
+                    client = New TcpClient(shtInfo, 5019)
+                    Dim Writer As New StreamWriter(client.GetStream())
+
+                    For index As Short = 0 To lstComputers.Count - 1
+                        Writer.Write(chrStartProcessingText & lstComputers(index).ToString() & chrAddComToConnectListEnd)
+                        Writer.Flush()
+                    Next
+
+                    'then adds the name to all other computers I am connected to and me.
+                    For index As Short = 0 To lstComputers.Count - 1
+                        client = New TcpClient(lstComputers(index), 5019)
+                        Writer = New StreamWriter(client.GetStream())
+
+                        Writer.Write(chrStartProcessingText & shtInfo.ToString() & chrAddComToConnectListEnd)
+                        Writer.Flush()
+                    Next
+
+                End If
+
                 lstComputers.Add(shtInfo)
+                lbxComputersConnectedTo.Items.Add(shtInfo)
                 shtInfo = String.Empty
 
             ElseIf currentProcess = Process.MessageEnd Then
@@ -110,20 +145,31 @@ Public Class Form1
     End Sub
 
     Private Sub ConnectToComputersAndSendMessages()
-        For Each str As String In lstComputers
-            client = New TcpClient(str, 5019)
+        For index As Short = 0 To lstComputers.Count - 1
+            client = New TcpClient(lstComputers(index), 5019)
 
             'Sends the message.
             Dim Writer As New StreamWriter(client.GetStream())
-            Writer.Write(
-                            chrStartProcessingText & tbxMessageToSend.Text & chrMessageEnd &
-                            chrStartProcessingText & My.Computer.Name & chrMessageEnd
-                        )
+            Writer.Write(chrStartProcessingText & tbxMessageToSend.Text & chrMessageEnd &
+                         chrStartProcessingText & My.Computer.Name & chrMessageEnd)
             Writer.Flush()
         Next
     End Sub
 
-    Private Sub btnConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConnect.Click
+    Private Sub btnConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConnect.Click  'Connects to a computer
+        If lstComputers.Contains(tbxConnectionComputerName.Text) Then
+            Exit Sub
+        End If
+
+        client = New TcpClient(tbxConnectionComputerName.Text, 5019)
+
+        'Send give coms
+        Dim Writer As New StreamWriter(client.GetStream())
+        Writer.Write(chrStartProcessingText & My.Computer.Name & chrGiveComs)
+        Writer.Flush()
+
         lstComputers.Add(tbxConnectionComputerName.Text)
+        lbxComputersConnectedTo.Items.Add(tbxConnectionComputerName.Text)
     End Sub
+
 End Class
