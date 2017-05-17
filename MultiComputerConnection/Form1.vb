@@ -164,14 +164,12 @@ Public Class Form1
 
         GiveComNamesToFriends(Writer, tbxConnectionComputerName.Text)
 
-        client = New TcpClient(tbxConnectionComputerName.Text, 5019)
-
         'send it my computers.
         For index As Short = 0 To lstComputers.Count - 1
             If lstComputers(index).ToString = My.Computer.Name Then
                 Continue For  'Don't include my name
             End If
-            Writer.Write(chrStartProcessingText & lstComputers(index).ToString & chrAddComToConnectListEnd)
+            Writer.Write(chrStartProcessingText & lstComputers(index).ToString & chrStartProcessingText)
             Writer.Flush()
         Next
 
@@ -187,7 +185,7 @@ Public Class Form1
             End If
 
             client = New TcpClient(lstComputers(index).ToString, 5019)
-            Writer.Write(chrStartProcessingText & name & chrAddComToConnectListEnd)
+            Writer.Write(chrStartProcessingText & name & chrStartProcessingText)
             Writer.Flush()
         Next
     End Sub
