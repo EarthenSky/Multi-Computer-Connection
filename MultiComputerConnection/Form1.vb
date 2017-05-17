@@ -101,12 +101,33 @@ Public Class Form1
                     Dim Writer As New StreamWriter(client.GetStream())
 
                     For index As Short = 0 To lstComputers.Count - 1
+<<<<<<< HEAD
+                        Writer.Write(chrStartProcessingText & lstComputers(index).ToString() & chrAddComToConnectListEnd)
+=======
+<<<<<<< HEAD
                         Writer.Write(chrStartProcessingText & lstComputers(index).ToString() & chrAddComToConnectListEnd)
                         Writer.Flush()
                     Next
 
+                    'then adds the name to all other computers I am connected to and me.
+                    For index As Short = 0 To lstComputers.Count - 1
+                        client = New TcpClient(lstComputers(index), 5019)
+                        Writer = New StreamWriter(client.GetStream())
+
+                        Writer.Write(chrStartProcessingText & shtInfo.ToString() & chrAddComToConnectListEnd)
+=======
+                        Writer.Write(chrStartProcessingText & lstComputers(index).ToString() & chrStartProcessingText)
+>>>>>>> origin/master
+>>>>>>> origin/master
+                        Writer.Flush()
+                    Next
+
                 End If
+<<<<<<< HEAD
+
+=======
                 'then adds
+>>>>>>> origin/master
                 lstComputers.Add(shtInfo)
                 lbxComputersConnectedTo.Items.Add(shtInfo)
                 shtInfo = String.Empty
