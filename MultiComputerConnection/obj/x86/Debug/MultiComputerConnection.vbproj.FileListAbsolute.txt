@@ -28,3 +28,19 @@ C:\Users\127-gstang\Desktop\MultiComputerConnection\MultiComputerConnection\obj\
 C:\Users\127-gstang\Desktop\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Form1.resources
 C:\Users\127-gstang\Desktop\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Resources.resources
 C:\Users\127-gstang\Desktop\MultiComputerConnection\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbproj.GenerateResource.Cache
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.exe
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.xml
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.pdb
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\bin\Debug\MultiComputerConnection.exe
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\bin\Debug\MultiComputerConnection.pdb
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\bin\Debug\MultiComputerConnection.xml
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbprojResolveAssemblyReference.cache
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Form1.resources
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.Resources.resources
+M:\Programming 11\RandomStuff\MultiComputerConnection2\MultiComputerConnection\obj\x86\Debug\MultiComputerConnection.vbproj.GenerateResource.Cache
+>>>>>>> origin/master
+>>>>>>> origin/master
